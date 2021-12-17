@@ -1,4 +1,9 @@
-#footer > a {
+#footer > p {
   display:inline;
   text-align: center;
+}
+
+#footer {
+  width: 40%;
+  margin: auto;
 }
