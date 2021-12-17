@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using VendorManager.Models;
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
+using System;
 
 namespace VendorManager.Controllers
 {
@@ -62,6 +63,19 @@ namespace VendorManager.Controllers
       updatingVendor.Name = name;
       updatingVendor.Contact = newContact;
       return RedirectToAction("Show");
+    }
+
+    [HttpPost("/vendors/{vendorId}/orders")]
+    public ActionResult Create(int vendorId, string title, string description, DateTime deliveryTime)
+    {
+      Vendor currentVendor = Vendor.Find(vendorId);
+      Order newOrder = new(title, description, deliveryTime);
+      currentVendor.AddOrder(newOrder);
+      List<Order> vendorsOrders = currentVendor.Orders;
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      model.Add("orders", vendorsOrders);
+      model.Add("vendor", currentVendor);
+      return RedirectToAction("Show", model);
     }
   }
 }
