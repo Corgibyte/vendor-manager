@@ -11,19 +11,17 @@ namespace VendorManager.Models
 
     public static List<Order> GetAll()
     {
-      //TODO
-      return new List<Order>() { null };
+      return _instances;
     }
 
     public static void ClearAll()
     {
-      //TODO
+      _instances.Clear();
     }
 
     public static Order Find(int id)
     {
-      //TODO
-      return new Order("test", "test", new DateTime());
+      return _instances[id - 1];
     }
 
     //Instance properties and methods
@@ -35,7 +33,12 @@ namespace VendorManager.Models
 
     public Order(string title, string description, DateTime deliveryTime)
     {
-      //TODO
+      Title = title;
+      Description = description;
+      DeliveryTime = deliveryTime;
+      TimeCreated = DateTime.Now;
+      _instances.Add(this);
+      Id = _instances.Count;
     }
   }
 }

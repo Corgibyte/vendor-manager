@@ -21,8 +21,7 @@ namespace VendorManager.Tests
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
       Order testOrder = new(testTitle, testDescription, testDeliveryDate);
-      Assert.AreEqual(typeof(Vendor), testOrder.GetType());
-      //! TODO : must change back to typeof(Order) to make test pass 
+      Assert.AreEqual(typeof(Order), testOrder.GetType());
     }
 
     [TestMethod]
@@ -80,13 +79,6 @@ namespace VendorManager.Tests
     {
       Order testOrder = new(testTitle, testDescription, testDeliveryDate);
       Assert.AreEqual(testDeliveryDate, testOrder.DeliveryTime);
-    }
-
-    [TestMethod]
-    public void GetCreatedTime_ReturnsCreatedTime_DateTime()
-    {
-      Order testOrder = new(testTitle, testDescription, testDeliveryDate);
-      Assert.AreEqual(DateTime.Now, testOrder.TimeCreated);
     }
   }
 }
