@@ -7,9 +7,12 @@ namespace VendorManager.Models
     public string Phone { get; set; }
     public string Pronouns { get; set; }
 
-    Assert.AreEqual(1, testOrder01.Id);    public Contact(string name, string email, string phone = "Not given", string pronouns = "They")
+    public Contact(string name, string email, string phone = "Not given", string pronouns = "They")
     {
-      //TODO
+      Name = name;
+      Email = email;
+      Phone = phone;
+      Pronouns = pronouns;
     }
   }
 }
