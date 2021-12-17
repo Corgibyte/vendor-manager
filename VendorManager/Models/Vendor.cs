@@ -5,38 +5,41 @@ namespace VendorManager.Models
   public class Vendor
   {
     //Static properties and methods
-    private List<Vendor> _instances = new List<Vendor>() { };
+    private static List<Vendor> _instances = new List<Vendor>() { };
 
     public static List<Vendor> GetAll()
     {
-      //TODO
-      return new List<Vendor>() { };
+      return _instances;
     }
 
     public static void ClearAll()
     {
-      //TODO
+      _instances.Clear();
     }
 
     public static Vendor Find(int id)
     {
-      //TODO
-      return new Vendor("test", new Contact("test", "test"));
+      return _instances[id - 1];
     }
 
     //Instance properties and methods
     public int Id { get; }
     public Contact Contact { get; set; }
-    public string name { get; set; }
+    public string Name { get; set; }
+    public List<Order> Orders { get; }
 
     public Vendor(string name, Contact contact)
     {
-      //TODO
+      Name = name;
+      Contact = contact;
+      _instances.Add(this);
+      Id = _instances.Count;
+      Orders = new List<Order>() { };
     }
 
     public void AddOrder(Order order)
     {
-      //TODO
+      Orders.Add(order);
     }
   }
 }

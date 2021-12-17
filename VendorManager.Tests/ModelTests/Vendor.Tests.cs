@@ -20,8 +20,7 @@ namespace VendorManager.Tests
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
       Vendor testVendor = new(testName, testContact);
-      Assert.AreEqual(typeof(Order), testVendor.GetType());
-      //! TODO : must change back to typeof(Vendor) to make test pass 
+      Assert.AreEqual(typeof(Vendor), testVendor.GetType());
     }
 
     [TestMethod]
@@ -72,6 +71,16 @@ namespace VendorManager.Tests
       Vendor testVendor01 = new(testName, testContact);
       Vendor testVendor02 = new(testName, testContact);
       Assert.AreEqual(testVendor02, Vendor.Find(testVendor02.Id));
+    }
+
+    [TestMethod]
+    public void AddOrder_OrderAddedToList_OrderList()
+    {
+      Vendor testVendor = new(testName, testContact);
+      Order testOrder = new("testTitle", "testDescription", new DateTime());
+      testVendor.AddOrder(testOrder);
+      List<Order> expectedList = new List<Order>() { testOrder };
+      CollectionAssert.AreEqual(expectedList, testVendor.Orders);
     }
   }
 }
