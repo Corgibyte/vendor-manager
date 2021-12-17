@@ -1,4 +1,4 @@
-Contact newContact = new("Test name", "Test email");using System;
+using System;
 using System.Collections.Generic;
 
 namespace VendorManager.Models
@@ -12,7 +12,7 @@ namespace VendorManager.Models
     public static List<Order> GetAll()
     {
       //TODO
-      return new List<Order>() { };
+      return new List<Order>() { null };
     }
 
     public static void ClearAll()
