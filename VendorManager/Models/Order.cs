@@ -1,3 +1,4 @@
+Contact newContact = new("Test name", "Test email");using System;
 using System.Collections.Generic;
 
 namespace VendorManager.Models
@@ -11,6 +12,7 @@ namespace VendorManager.Models
     public static List<Order> GetAll()
     {
       //TODO
+      return new List<Order>() { };
     }
 
     public static void ClearAll()
@@ -21,6 +23,7 @@ namespace VendorManager.Models
     public static Order Find(int id)
     {
       //TODO
+      return new Order("test", "test", new DateTime());
     }
 
     //Instance properties and methods

@@ -10,6 +10,7 @@ namespace VendorManager.Models
     public static List<Vendor> GetAll()
     {
       //TODO
+      return new List<Vendor>() { };
     }
 
     public static void ClearAll()
@@ -20,6 +21,7 @@ namespace VendorManager.Models
     public static Vendor Find(int id)
     {
       //TODO
+      return new Vendor("test", new Contact("test", "test"));
     }
 
     //Instance properties and methods
