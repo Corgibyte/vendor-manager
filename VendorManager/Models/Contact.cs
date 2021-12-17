@@ -7,7 +7,7 @@ namespace VendorManager.Models
     public string Phone { get; set; }
     public string Pronouns { get; set; }
 
-    public Contact(string name, string email, string phone = "Not given", string pronouns = "They")
+    public Contact(string name, string email, string phone = "Not given", string pronouns = "Not given")
     {
       Name = name;
       Email = email;

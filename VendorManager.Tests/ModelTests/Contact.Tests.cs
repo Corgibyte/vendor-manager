@@ -47,7 +47,7 @@ namespace VendorManager.Tests
       string testName = "Test name";
       string testEmail = "Test email";
       Contact newContact = new(testName, testEmail);
-      Assert.AreEqual("They", newContact.Pronouns);
+      Assert.AreEqual("Not given", newContact.Pronouns);
     }
   }
 }
