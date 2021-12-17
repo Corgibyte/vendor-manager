@@ -43,6 +43,9 @@ None at current time
 ### Future goals:
 
 1. Combine with Corgibte Bakery to allow order of specific bakery items
+2. Allow editing DateTime of delivery
+3. Add order status
+4. Allow deletion of specific vendors and/or orders
 
 ### License
 
