@@ -11,7 +11,8 @@ namespace VendorManager.Tests
     public void ContactConstructor_CreatesInstanceOfContact_Contact()
     {
       Contact newContact = new("Test name", "Test email");
-      Assert.AreEqual(typeof(Contact), newContact.GetType());
+      Assert.AreEqual(typeof(Order), newContact.GetType());
+      //! TODO : must change back to typeof(Contact) to make test pass 
     }
 
     [TestMethod]

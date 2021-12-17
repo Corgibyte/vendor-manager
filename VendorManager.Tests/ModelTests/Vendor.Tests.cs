@@ -1,5 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using VendorManager.Models;
+using System.Collections.Generic;
+using System;
 
 namespace VendorManager.Tests
 {
@@ -15,33 +17,61 @@ namespace VendorManager.Tests
     }
 
     [TestMethod]
-    public void OrderConstructor_CreatesInstanceOfOrder_Order()
+    public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Order testOrder = new(testName, testDescription, testContact);
-      Assert.AreEqual(typeof(Order), newOrder.GetType());
+      Vendor testVendor = new(testName, testContact);
+      Assert.AreEqual(typeof(Order), testVendor.GetType());
+      //! TODO : must change back to typeof(Vendor) to make test pass 
     }
 
     [TestMethod]
     public void GetName_ReturnsName_String()
     {
-      Order testOrder = new(testName, testDescription, testContact);
-      Assert.AreEqual(testName, testOrder.Name);
+      Vendor testVendor = new(testName, testContact);
+      Assert.AreEqual(testName, testVendor.Name);
     }
 
     [TestMethod]
     public void GetContact_ReturnsContact_Contact()
     {
-      Order testOrder = new(testName, testDescription, testContact);
-      Assert.AreEqual(testContact, testOrder.Contact);
+      Vendor testVendor = new(testName, testContact);
+      Assert.AreEqual(testContact, testVendor.Contact);
     }
 
     [TestMethod]
     public void GetId_ReturnsId_int()
     {
-      Order testOrder01 = new(testName, testDescription, testContact);
-      Order testOrder02 = new(testName, testDescription, testContact);
-      Assert.AreEqual(1, testOrder01.Id);
-      Assert.AreEqual(2, testOrder02.Id);
+      Vendor testVendor01 = new(testName, testContact);
+      Vendor testVendor02 = new(testName, testContact);
+      Assert.AreEqual(1, testVendor01.Id);
+      Assert.AreEqual(2, testVendor02.Id);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsFullInstanceList_List()
+    {
+      Vendor testVendor01 = new(testName, testContact);
+      Vendor testVendor02 = new(testName, testContact);
+      List<Vendor> expectedList = new List<Vendor>() { testVendor01, testVendor02 };
+      CollectionAssert.AreEqual(expectedList, Vendor.GetAll());
+    }
+
+    [TestMethod]
+    public void ClearAll_ClearsInstanceList_EmptyList()
+    {
+      Vendor testVendor01 = new(testName, testContact);
+      Vendor testVendor02 = new(testName, testContact);
+      List<Vendor> expectedList = new List<Vendor>() { };
+      Vendor.ClearAll();
+      CollectionAssert.AreEqual(expectedList, Vendor.GetAll());
+    }
+
+    [TestMethod]
+    public void Find_FindsCorrectInstance_Vendor()
+    {
+      Vendor testVendor01 = new(testName, testContact);
+      Vendor testVendor02 = new(testName, testContact);
+      Assert.AreEqual(testVendor02, Vendor.Find(testVendor02.Id));
     }
   }
 }
