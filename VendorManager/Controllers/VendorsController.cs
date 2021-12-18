@@ -75,7 +75,7 @@ namespace VendorManager.Controllers
       Dictionary<string, object> model = new Dictionary<string, object>();
       model.Add("orders", vendorsOrders);
       model.Add("vendor", currentVendor);
-      return RedirectToAction("Show", model);
+      return LocalRedirect($"/vendors/{vendorId}");
     }
   }
 }

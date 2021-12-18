@@ -14,6 +14,8 @@ namespace VendorManger.Controllers
       Vendor currentVendor = Vendor.Find(vendorId);
       Order currentOrder = Order.Find(orderId);
       Dictionary<string, object> model = new Dictionary<string, object>();
+      model.Add("vendor", currentVendor);
+      model.Add("order", currentOrder);
       return View(model);
     }
 
@@ -23,6 +25,8 @@ namespace VendorManger.Controllers
       Vendor currentVendor = Vendor.Find(vendorId);
       Order currentOrder = Order.Find(orderId);
       Dictionary<string, object> model = new Dictionary<string, object>();
+      model.Add("vendor", currentVendor);
+      model.Add("order", currentOrder);
       return View(model);
     }
 

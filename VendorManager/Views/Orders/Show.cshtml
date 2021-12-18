@@ -1,5 +1,3 @@
-@using VendorManager.Models;
-
 @{
   Layout = "_Layout";
 }
@@ -19,19 +17,14 @@
     <p>@Model["vendor"].Contact.Pronouns</p>
   </div>
   <div class="orderHeader">
-    <h3>Active Orders</h3>
+    <h3>@Model["order"].Title</h3>
   </div>
   <div class="orderButton">
-    <a href='/vendors/@Model["vendor"].Id/orders/new' class='btn btn-secondary' role='button'>Add Order</a>
+    <a href='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id/edit' class='btn btn-secondary' role='button'>Edit Order</a>
   </div>
-  <div class="orderList">
-    @foreach (Order order in @Model["orders"])
-    {
-      <div>
-        <h4><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></h4>
-        <p>@order.Description</p>
-        <p>@order.DeliveryTime</p>
-      </div>
-    }
+  <div class="orderInfo">
+    <p><em>Description:</em> @Model["order"].Description</p>
+    <p><em>Delivery Time:</em> @Model["order"].DeliveryTime</p>
+    <p><em>Order Created:</em> @Model["order"].Description</p>
   </div>
 </div>

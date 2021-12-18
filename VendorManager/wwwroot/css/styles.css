@@ -8,6 +8,59 @@
   margin: auto;
 }
 
-.card {
-  width:20rem;
+.card-body > p {
+  margin:0;
+  padding:5px 5px 5px 5px;
+}
+
+#header {
+  padding:1rem;
+}
+
+#vendorInfo {
+  max-width: fit-content;
+  padding-right: 2rem;
+}
+
+.vendorGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 6fr;
+  grid-template-rows: 1fr 4fr 4fr;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  grid-template-areas:
+    "subheader orderButton orderHeader"
+    "vendorInfo orders orders"
+    "contactInfo orders orders";
+  padding-left: 1rem;
+}
+
+.orderHeader {
+  grid-area: orderHeader;
+}
+
+.orderButton {
+  grid-area: orderButton;
+}
+
+.orderList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  grid-area: orders;
+}
+
+.orderInfo {
+  grid-area: orders;
+}
+
+.vendorInfo {
+  grid-area: vendorInfo;
+}
+
+.subheader {
+  grid-area: subheader;
+}
+
+.contactInfo {
+  grid-area: contactInfo;
 }
