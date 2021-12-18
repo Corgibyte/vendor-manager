@@ -4,10 +4,7 @@
 
 <div class="vendorGrid">
   <div class="subheader">
-    <h3>@Model["vendor"].Name</h3>
-  </div>
-  <div class="vendorInfo">
-    <p>TODO: Vendor Info</p>
+    <h3><a href='/vendors/@Model["vendor"].Id/'>@Model["vendor"].Name</a></h3>
   </div>
   <div class="contactInfo">
     <h5>Contact Info</h5>
@@ -25,6 +22,6 @@
   <div class="orderInfo">
     <p><em>Description:</em> @Model["order"].Description</p>
     <p><em>Delivery Time:</em> @Model["order"].DeliveryTime</p>
-    <p><em>Order Created:</em> @Model["order"].Description</p>
+    <p><em>Order Created:</em> @Model["order"].TimeCreated</p>
   </div>
 </div>
