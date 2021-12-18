@@ -46,6 +46,7 @@ None at current time
 2. Allow editing DateTime of delivery
 3. Add order status
 4. Allow deletion of specific vendors and/or orders
+5. Phone number validation
 
 ### License
 
