@@ -27,27 +27,58 @@
   grid-template-columns: 2fr 1fr 5fr;
   grid-template-rows: 1fr 4fr 4fr;
   grid-column-gap: 1rem;
-  grid-row-gap: 1rem;
+  grid-row-gap: 2rem;
   grid-template-areas:
-    "subheader orderButton orderHeader"
+    "subheader orderHeader orderButton"
     "contactInfo orders orders"
     "contactInfo orders orders";
   padding-left: 1rem;
 }
 
+#header {
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "headerTitle homeButton vendorListButton ."
+    "separator separator separator separator";
+}
+
+#separator {
+  grid-area: separator;
+}
+
+#homeButton {
+  grid-area: homeButton;
+  justify-self: center;
+  align-self: center;
+}
+
+#vendorListButton {
+  grid-area: vendorListButton;
+  justify-self: center;
+  align-self: center;
+}
+
+#headerTitle {
+  grid-area: headerTitle;
+}
+
 .orderHeader {
   grid-area: orderHeader;
+  align-self: center;
 }
 
 .orderButton {
   grid-area: orderButton;
-  justify-self: center;
+  align-self: center;
 }
 
 .orderList {
   display: grid;
   grid-template-columns: repeat(auto-fill, 250px);
+  grid-column-gap:1rem;
   grid-area: orders;
+  margin-left:1rem;
 }
 
 .orderInfo {
