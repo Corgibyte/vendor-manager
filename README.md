@@ -1,10 +1,10 @@
 ## Corgibyte Vendor Manager
 
-![Screenshot of Running Website](//TODO)
+![Screenshot of Running Website](/Screenshot.png)
 
 By Hannah Young
 
-A simple web application to manage and record orders from vendors
+A simple web application to manage orders from vendors.
 
 ### Technologies Used
 
@@ -15,26 +15,25 @@ A simple web application to manage and record orders from vendors
 
 ### Description
 
-//TODO
+This is a web application that showcases my ability to develop a robust ASP.NET Core MVC backend. 
 
 ### Setup
 
-//TODO: Update setup instructions
-
-#### To Run Console Application
+#### To Run Web Application
 
 1. Download and install the [.NET 5.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/5.0) as required for your system. Be sure to add the .NET sdk to your PATH
-2. Use terminal to navigate to desired parent directory and use `git clone https://github.com/Corgibyte/bakery.git Bakery.Solution`
-3. Navigate into the project directory nested inside the .Solution directory: `cd Bakery.Solution/Bakery`
+2. Use terminal to navigate to desired parent directory and use `git clone https://github.com/Corgibyte/vendor-manager.git VendorManager.Solution`
+3. Navigate into the project directory nested inside the .Solution directory: `cd VendorManager.Solution/VendorManager`
 4. Build project: `dotnet restore`
 5. Run project: `dotnet run`
+6. Use browser to navigate to `localhost:5000`
 
 #### To Run Tests
 
-1. Follow steps 1 and 2 from **To Run Console Application** above if not done already
-2. Use terminal to navigate into the test folder nested inside the .Solution directory `cd Bakery.Solution/Bakery.Tests`
+1. Follow steps 1 and 2 from **To Run Web Application** above if not done already
+2. Use terminal to navigate into the test folder nested inside the .Solution directory `cd VendorManager.Solution/VendorManager.Tests`
 3. Build tests: `dotnet restore`
-4. Run tests: `dotnet run`
+4. Run tests: `dotnet test`
 
 ### Known bugs:
 
@@ -43,10 +42,9 @@ None at current time
 ### Future goals:
 
 1. Combine with Corgibte Bakery to allow order of specific bakery items
-2. Allow editing DateTime of delivery
-3. Add order status
-4. Allow deletion of specific vendors and/or orders
-5. Phone number validation
+2. Add order status
+3. Allow deletion of specific vendors and/or orders
+4. Phone number validation
 
 ### License
 
