@@ -25,7 +25,7 @@
   <div class="orderList">
     @foreach (Order order in @Model["orders"])
     {
-      <div>
+      <div class="vendorItem">
         <h4><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></h4>
         <p>@order.Description</p>
         <p>@order.DeliveryTime</p>

@@ -5,21 +5,31 @@
   Layout = "_Layout";
 }
 
-<div class="container">
-  <h1>Vendors</h1>
+<div class="vendorsList">
+  <div class="vendorsTitle">
+    <h1>Vendors</h1>
+  </div>
+  <div class="vendorsAddButton">
+    <a href='/vendors/new' class='btn btn-secondary' role='button'>Add Vendor</a>
+  </div>
+  <div class="separator">
+    <hr>
+  </div>
 
-  @if (@Model.Count == 0)
-  {
-    <h3><a href='/vendors/new'>No current vendors</a></h3>
-  }
-
-  @foreach (Vendor vendor in Model)
-  {
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">@vendor.Name</h5>
-        <p class="card-text"><a href='/vendors/@vendor.Id'>@vendor.Orders.Count active order(s)</a></p>
+  <div class="vendorsContent">
+    @if (@Model.Count == 0)
+    {
+      <div class="vendorItem">
+        <h3>No current vendors</h3>
       </div>
-    </div>
-  }
+    }
+
+    @foreach (Vendor vendor in Model)
+    {
+      <div class="vendorItem">
+        <h5>@vendor.Name</h5>
+        <p><a href='/vendors/@vendor.Id'>@vendor.Orders.Count active order(s)</a></p>
+      </div>
+    }
+  </div>
 </div>

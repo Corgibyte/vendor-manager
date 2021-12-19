@@ -2,28 +2,23 @@
   Layout = "_Layout";
 }
 
-<div class='container'>
-  <h1>Add Vendor</h1>
+<div class='inputContainer'>
+  <h2>Add Vendor</h2>
   <form action='/vendors' method='post'>
-    <div class='form-floating'>
+    <div>
       <input class='form-control' name='name' id='name' type='text' placeholder='Vendor Name (required)' required>
-      <label for='name'>Vendor Name (required)</label>
     </div>
-    <div class='form-floating'>
+    <div>
       <input class='form-control' name='contactName' id='contactName' type='text' placeholder='Contact Name (required)' required>
-      <label for='contactName'>Contact Name (required)</label>
     </div>
-    <div class='form-floating'>
-      <input class='form-control' name='contactEmail' id='contactEmail' type='email' placeholder='Vendor Email (required)' required>
-      <label for='contactEmail'>Vendor Email (required)</label>
+    <div>
+      <input class='form-control' name='contactEmail' id='contactEmail' type='email' placeholder='Contact Email (required)' required>
     </div>
-    <div class='form-floating'>
-      <input class='form-control' name='contactPhone' id='contactPhone' type='text' placeholder='Vendor Phone' required>
-      <label for='contactPhone'>Vendor Phone</label>
+    <div>
+      <input class='form-control' name='contactPhone' id='contactPhone' type='text' placeholder='Contact Phone' required>
     </div>
-    <div class='form-floating'>
-      <input class='form-control' name='contactPronouns' id='contactPronouns' type='text' placeholder='Vendor Pronouns' required>
-      <label for='contactPronouns'>Vendor Pronouns</label>
+    <div>
+      <input class='form-control' name='contactPronouns' id='contactPronouns' type='text' placeholder='Contact Pronouns' required>
     </div>
     <button type='submit' class='btn btn-secondary'>Create Vendor</button>
   </form>
