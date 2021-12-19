@@ -101,3 +101,12 @@
   margin-bottom:1px;
   margin-left:1rem;
 }
+
+#splash {
+  margin:2rem 0 0 5rem;
+}
+
+.big-btn {
+  width:60%;
+  margin-left:4rem;
+}
