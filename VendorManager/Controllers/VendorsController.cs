@@ -47,7 +47,8 @@ namespace VendorManager.Controllers
     [HttpGet("/vendors/{vendorId}/edit")]
     public ActionResult Edit(int vendorId)
     {
-      return View();
+      Vendor currentVendor = Vendor.Find(vendorId);
+      return View(currentVendor);
     }
 
     [HttpPost("/vendors/{vendorId}")]
@@ -62,7 +63,7 @@ namespace VendorManager.Controllers
       Vendor updatingVendor = Vendor.Find(vendorId);
       updatingVendor.Name = name;
       updatingVendor.Contact = newContact;
-      return RedirectToAction("Show");
+      return LocalRedirect($"/vendors/{vendorId}");
     }
 
     [HttpPost("/vendors/{vendorId}/orders")]

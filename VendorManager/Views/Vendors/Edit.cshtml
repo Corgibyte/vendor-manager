@@ -1,0 +1,30 @@
+@{
+  Layout = "_Layout";
+}
+
+<div class='container'>
+  <h1>Add Vendor</h1>
+  <form action='/vendors/@Model.Id' method='post'>
+    <div class='form-floating'>
+      <input class='form-control' name='name' id='name' type='text' placeholder='Vendor Name (required)' value='@Model.Name' required>
+      <label for='name'>Vendor Name (required)</label>
+    </div>
+    <div class='form-floating'>
+      <input class='form-control' name='contactName' id='contactName' type='text' placeholder='Contact Name (required)' value='@Model.Contact.Name' required>
+      <label for='contactName'>Contact Name (required)</label>
+    </div>
+    <div class='form-floating'>
+      <input class='form-control' name='contactEmail' id='contactEmail' type='email' placeholder='Vendor Email (required)' value='@Model.Contact.Email' required>
+      <label for='contactEmail'>Vendor Email (required)</label>
+    </div>
+    <div class='form-floating'>
+      <input class='form-control' name='contactPhone' id='contactPhone' type='text' placeholder='Vendor Phone' value='@Model.Contact.Phone' required>
+      <label for='contactPhone'>Vendor Phone</label>
+    </div>
+    <div class='form-floating'>
+      <input class='form-control' name='contactPronouns' id='contactPronouns' type='text' placeholder='Vendor Pronouns' value='@Model.Contact.Pronouns' required>
+      <label for='contactPronouns'>Vendor Pronouns</label>
+    </div>
+    <button type='submit' class='btn btn-secondary'>Update Vendor</button>
+  </form>
+</div>

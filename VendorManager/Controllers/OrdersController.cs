@@ -39,7 +39,7 @@ namespace VendorManger.Controllers
       currentOrder.Description = description;
       currentOrder.DeliveryTime = deliveryTime;
       Dictionary<string, object> model = new Dictionary<string, object>();
-      return RedirectToAction("Show");
+      return LocalRedirect($"/vendors/{vendorId}/orders/{orderId}");
     }
 
     [HttpGet("/vendors/{vendorId}/orders/new")]
