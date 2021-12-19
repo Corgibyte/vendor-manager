@@ -2,20 +2,17 @@
   Layout = "_Layout";
 }
 
-<div class='container'>
+<div class='inputContainer'>
   <h1>Add Order</h1>
   <form action='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id' method='post'>
-    <div class='form-floating'>
+    <div>
       <input class='form-control' name='title' id='title' type='text' placeholder='Order Title' value='@Model["order"].Title' required>
-      <label for='title'>Order Title</label>
     </div>
-    <div class='form-floating'>
+    <div>
       <input class='form-control' name='description' id='description' type='textarea' placeholder='Order Description' value='@Model["order"].Description' required>
-      <label for='description'>Order Description</label>
     </div>
-    <div class='form-floating'>
+    <div>
       <input class='form-control' name='deliveryTime' id='deliveryTime' type='datetime-local' placeholder='Delivery Date)' value='@Model["order"].DeliveryTime.ToString("s")' required>
-      <label for='deliveryTime'>Delivery Date</label>
     </div>
     <button type='submit' class='btn btn-secondary'>Edit Order</button>
   </form>
